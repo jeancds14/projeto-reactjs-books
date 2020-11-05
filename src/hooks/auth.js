@@ -37,7 +37,7 @@ import { SignInUser, SignUpUser } from '../services/userService';
 
       if(response !== null)
       {
-        if(response.response)
+        if(response.success)
         {
           localStorage.setItem('@App:token', response.token);
           localStorage.setItem('@App:email', email);
@@ -57,7 +57,6 @@ import { SignInUser, SignUpUser } from '../services/userService';
 
     const signUp = useCallback(async ({email, password}) => {
       const response = await SignUpUser(email, password)
-
       if(response !== null)
       {
         if(response.response)
