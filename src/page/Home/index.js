@@ -5,12 +5,15 @@ import Header from '../../components/Header';
 
 import { Container, ContainerList, Item, ImgBook, TitleBook, ContainerInfos, AuthorBook, ButtonAdd } from './styles';
 
+import { useHistory } from 'react-router-dom';
+
 import { GetAllBook } from '../../services/bookService';
 import { useToast } from '../../hooks/toast';
 
 function Home() {
   const [books, setBooks] = useState(null);
   const { addToast } = useToast();
+  const history = useHistory();
   
   const LoadContent = async () => {
     try{
@@ -36,6 +39,10 @@ function Home() {
     }
   }
 
+  const handleAddBook = () => {
+    history.push('/addbook');
+  }
+
   useEffect(() => {
     LoadContent();
   }, []);
@@ -58,7 +65,7 @@ function Home() {
             
         </ContainerList>
         
-        <ButtonAdd>
+        <ButtonAdd onClick={handleAddBook}>
             +
         </ButtonAdd>
     </Container>

@@ -87,6 +87,7 @@ export default function Login() {
                     <Button type="submit" loading={loading}>Entrar</Button>
                 </Form>
             </Box>
+            <Link to="/register" style={{color: '#fff', fontWeight: 'bold'}}>Cadastro</Link>
         </Container>
     );
 }

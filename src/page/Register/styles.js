@@ -6,7 +6,6 @@ export const Container = styled.div`
   background-color: #323038;
   align-items: center;
   justify-content: center;
-  flex-direction:column;
 `;
 
 export const Box = styled.div`

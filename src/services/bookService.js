@@ -10,3 +10,16 @@ export async function GetAllBook() {
         console.log(exception);
     }
 }
+
+export async function CreateBook(data) {
+    try{
+        var response = await api.post(
+            'book',
+            data
+        );
+        
+        return response.data;
+    } catch(exception) {
+        console.log(exception);
+    }
+}
